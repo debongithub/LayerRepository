@@ -8,7 +8,7 @@ aws_lambda_output=$(aws lambda publish-layer-version --layer-name AnyBankGoverna
 latest_version=$(echo $aws_lambda_output | jq -r '.Version')
 echo "Latest version: $latest_version"
 
-# List files and directories for debugging
+# List files and directories 4 debugging 
 pwd
 ls -lrt
 
