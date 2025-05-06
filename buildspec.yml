@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+  build:
+    commands:
+      - echo Building Lambda layer with Python 3.11...
+      - pip install -r python/requirement.txt -t python/
+      - zip -r AnyBankGovernanceLayer.zip python/
+      
+artifacts:
+  files:
+    - AnyBankGovernanceLayer.zip
+    - post_build_publish.sh
+    - post_build_permissions.sh
